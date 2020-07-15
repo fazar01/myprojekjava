@@ -1,0 +1,34 @@
+package perushaan1;
+import java.util.Arrays;
+import java.util.Collections;
+public class Student {
+	public void sortIntArrayReverseOrder() {
+	
+	Integer[] arrayToSort = new Integer[] {
+	        new Integer(48),
+	        new Integer(5),
+	        new Integer(89),
+	        new Integer(80),
+	        new Integer(81),
+	        new Integer(23),
+	        new Integer(45),
+	        new Integer(16),
+	        new Integer(2)
+	    };
+
+
+	    Arrays.sort(arrayToSort, Collections.reverseOrder());
+	    System.out.print("\n\nDescinding Order is : ");
+	    for (Integer i : arrayToSort) {
+	        System.out.print(i.intValue() + " ");
+	    }
+
+	}
+
+	public static void main(String[] args) {
+		
+	    Student SortTestArray = new Student();
+	    SortTestArray.sortIntArrayReverseOrder();
+	}
+}
+	

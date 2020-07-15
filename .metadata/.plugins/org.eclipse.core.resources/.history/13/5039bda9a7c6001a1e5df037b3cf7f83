@@ -1,0 +1,18 @@
+package perushaan1;
+import java.util.Arrays;
+public class Student {
+	public static void main(String[]args){
+		
+		int[] array1 = new int[]{10, 22, 45, 6, 7, 25};
+		int[][] ranked = new int[array1.length][2];
+		for(int i=0; i < array1.length; i++)
+		    ranked[i][0] = array1[i];
+		Arrays.sort(array1);
+
+		for(int i=0; i < array1.length; i++)
+		    for(int n=0; n < array1.length; n++)
+		        if(ranked[n][0] == array1[i] && ranked[n][1] == 0) 
+		            ranked[n][1] = array1.length-i;
+	}
+}
+

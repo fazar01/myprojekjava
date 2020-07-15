@@ -1,0 +1,43 @@
+package perushaan1;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.*;
+
+public class Student {
+	public static void main(String args[]) throws InterruptedException{
+        int x[] = new int[6];
+        
+        x[0] = 89 ;
+        x[1] = 90 ;
+        x[2] = 97 ;
+        x[3] = 85 ;
+        x[4] = 88 ;
+        x[5] = 93 ;
+        
+        String b[]= new String[6];
+        
+        b[0] = "Agus" ;
+        b[1] = "Juni" ;
+        b[2] = "Yanuar";
+        b[3] = "Desi" ;
+        b[4] = "Nopi" ;
+        b[5] = "Febi" ;
+        
+        String c[]= new String[6];
+        
+        c[0] = "Ranking 1" ;
+        c[1] = "Ranking 2" ;
+        c[2] = "Ranking 3" ;
+        c[3] = "Ranking 4" ;
+        c[4] = "Ranking 5" ;
+        c[5] = "Ranking 6" ;
+        
+        List<String> list = Arrays.asList(b[0]+x[2]);
+        System.out.println(list);
+
+
+        
+        
+}
+}

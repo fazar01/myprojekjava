@@ -1,0 +1,55 @@
+package perushaan1;
+
+import java.util.ArrayList;
+import java.util.List;
+
+class Employee {
+	private String name;
+	private int id;
+
+	public Employee() {
+
+	}
+
+	public Employee(String name, int id) {
+		super();
+		this.name = name;
+		this.id = id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+}
+
+public class SortingListAscendingOrder {
+	public static void main(String[] args) {
+
+		List<Employee> emplist = new ArrayList<>();
+		emplist.add(new Employee("ram", 5));
+		emplist.add(new Employee("mohan", 1));
+		emplist.add(new Employee("sohan", 3));
+		emplist.add(new Employee("shyam", 2));
+		emplist.add(new Employee("john", 6));
+
+		System.out.println("sort on basis of name");
+		emplist.sort((Employee o1, Employee o2) -> o2.getName().compareTo(o1.getName()));
+		emplist.forEach((emp) -> System.out.println(emp.getName()));
+
+		System.out.println("sort on basis of id");
+		emplist.sort((Employee o1, Employee o2) -> o2.getId() - o1.getId());
+		emplist.forEach((emp) -> System.out.println(emp.getId()));
+	}
+}

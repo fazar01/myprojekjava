@@ -1,0 +1,140 @@
+package perushaan1;
+public class Student{
+
+    //Main
+    public static void main (String args[]){
+    	
+        System.out.println(highestAssessment(initial_names(), initial_assessments())+" has the maximum assessment score.");
+        System.out.println("Average exam score: "+average_of_exams(initial_exams()));
+        //final_scores(initial_names(), initial_assessments(), initial_exams());
+        final_grades(initial_names(), final_scores(initial_names(), initial_assessments(), initial_exams()));
+        //rescore(initial_names(), final_scores(initial_names(), initial_assessments(), initial_exams()));
+        regrade(initial_names(), rescore(initial_names(), final_scores(initial_names(), initial_assessments(), initial_exams())));      
+
+    }
+
+    private static String average_of_exams(double[] initial_exams) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	private static String highestAssessment(String[] initial_names, double[] initial_assessments) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	static String [] initial_names(){
+        String [] names = {"Jimmy", "Alex", "Jane", "Suzie", "Phil", "Elena", "James"};
+        return names;
+    }
+
+    static double [] initial_assessments(){
+        double [] assessments = {90.0, 78.0, 63.5, 75.8, 47.6, 100.0, 47.0, 56.0, 81.0, 97.0, 34.9, 81.3, 77.5, 61.2, 75.0, 57.4, 31.1, 95.3, 84.2, 57.4, 79.5, 73.1, 35.5, 17.9, 87.4, 45.3};
+
+        return assessments;
+    }
+
+    static double [] initial_exams(){
+        double [] exams = {73.0, 62.5, 62.5, 78.0, 69.0, 58.0, 48.0, 53.5, 71.0, 56.5, 45.5, 70.0, 68.0, 69.0, 83.0, 98.0, 68.0, 80.0, 78.5, 58.0, 73.5, 73.0, 62.5, 62.5, 78.0, 69};
+
+        return exams;
+    }
+
+    public static double[] final_scores(String[] Names, double[] Assessments, double[] Exams){
+        double [] scores = new double [Assessments.length];
+        for (int i = 0; i < scores.length; i++){
+            scores [i] = Assessments [i] * 0.6 + Exams [i] * 0.4;
+
+        }
+        for (int i = 0; i < scores.length; i++){
+            System.out.println(Names[i]+" has score: "+scores[i]);
+        }
+
+        return scores;
+    }
+
+    public static char[] final_grades(String[] Names, double[] final_score){
+        char [] grade = new char [Names.length];
+        for (int i = 0; i < grade.length; i++){
+            if (final_score[i] >= 80)
+            grade[i] = 'A';
+
+                else if (final_score[i] >= 65)
+                    grade[i] = 'B';
+
+                else if (final_score[i] >= 50)
+                    grade[i] = 'C';
+
+                else if (final_score[i] >= 40)
+                    grade[i] = 'D';
+
+                else grade[i] = 'F';
+        }
+
+        for (int i = 0; i < grade.length; i++){
+            System.out.println(Names[i]+" has grade: "+grade[i]);
+        }
+
+        return grade;   
+    }
+
+    public static double[] rescore(String[] Names, double[] final_score){
+        double [] new_score = new double [Names.length];
+
+        for (int i = 0; i < new_score.length; i++){
+             new_score[i] = Math.sqrt(final_score[i]) * 10.0;
+        }
+
+        for (int i = 0; i < new_score.length; i++){
+            System.out.println(Names[i]+" has a new score: "+new_score[i]);
+        }
+
+        return new_score;
+    }
+
+    public static char[] regrade(String[] Names, double[] new_final_score){
+        char [] grade = new char [Names.length];
+        for (int i = 0; i < grade.length; i++){
+            if (new_final_score[i] >= 80)
+            grade[i] = 'A';
+
+                else if (new_final_score[i] >= 65)
+                    grade[i] = 'B';
+
+                else if (new_final_score[i] >= 50)
+                    grade[i] = 'C';
+
+                else if (new_final_score[i] >= 40)
+                    grade[i] = 'D';
+
+                else grade[i] = 'F';
+        }
+
+        for (int i = 0; i < grade.length; i++){
+            System.out.println(Names[i]+" has new grade: "+grade[i]);
+        }
+
+        return grade;   
+    }
+
+    public static int[] sort_decreasingly(String[] Names, double[] final_score, char[] final_grade){
+        int [] sort = new int [Names.length];
+
+        int temp;
+        int first = 0;
+
+        for (int i = sort.length - 1; i > 0; i--){
+            for (int j = 1; j<=i ; j++){
+                if (sort[j] > sort[first]){
+                first = j;
+                }
+                temp = sort[first];
+                sort[first] = sort[i];
+                sort[i] = temp;
+            }
+
+        }
+    return sort;
+    }
+
+}
